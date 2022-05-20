@@ -7,10 +7,9 @@ public class Car {
     private int carcapacityKg;
     private int carspeedKmPerH;
     private int carfuelCostLPer100Km;
+    private int literperdistance;
 
-    public String getCarName() {
-        return carname;
-    }
+    public String getCarName() {return carname;}
 
     public void setCarName(String name) {
         this.carname = name;
@@ -40,6 +39,9 @@ public class Car {
         this.carfuelCostLPer100Km = carfuelCostLPer100Km;
     }
 
+    public int getCarLiterPerDistance() {return literperdistance;}
+
+    public void setCarLiterPerDistance(int literperdistance) {this.literperdistance = literperdistance;}
     @Test
     public void carCharacteristics() {
         Car firstcar = new Car();
@@ -70,8 +72,17 @@ public class Car {
                 "  Capacity in Kilogram:" + thirdcar.getCarCapacity() +
                 "  Speed in Kilometers per hour:" + thirdcar.getCarSpeed() +
                 "  Fuel Cost in Liter Per 100Km:" + thirdcar.getCarFuel());
+    }
 
+    @Test
+    public void fuelCost() {
         int distance = 1000;
+        Car firstcar = new Car();
+        firstcar.setCarFuel(50);
+        Car secondcar = new Car();
+        secondcar.setCarFuel(60);
+        Car thirdcar = new Car();
+        thirdcar.setCarFuel(80);
 
         int literperdistanceone = distance / 100 * firstcar.getCarFuel();
         System.out.println("First car fuelcost per distance = " + literperdistanceone);
@@ -79,24 +90,33 @@ public class Car {
         int literperdistancetwo = distance / 100 * secondcar.getCarFuel();
         System.out.println("Second car fuelcost per distance = " + literperdistancetwo);
 
-        int thirdcarliterperdistance = distance / 100 * thirdcar.getCarFuel();
-        System.out.println("Third cat fuelcost per distance = " + thirdcarliterperdistance);
+        int literperdistancethree = distance / 100 * thirdcar.getCarFuel();
+        System.out.println("Third car fuelcost per distance = " + literperdistancethree);
+        firstcar.setCarLiterPerDistance(literperdistanceone);
+        secondcar.setCarLiterPerDistance(literperdistancetwo);
+        thirdcar.setCarLiterPerDistance(literperdistancethree);
 
-        int loadinkg = 1000;
-
-        int firstcartranscost = loadinkg / firstcar.getCarCapacity() * literperdistanceone;
-        System.out.println("First car transportation cost = " + firstcartranscost);
-
-        int secondcartranscost = loadinkg / secondcar.getCarCapacity() * literperdistancetwo;
-        System.out.println("Second car transportation cost = " + secondcartranscost);
-
-
-        int thirdcartranscost = loadinkg / thirdcar.getCarCapacity() * thirdcarliterperdistance;
-        System.out.println("Third car transportation cost = " + thirdcartranscost);
     }
 
+    @Test
+    public void transcost() {
 
+        int loadinkg = 1000;
+        Car firstcar = new Car();
+        firstcar.setCarCapacity(100);
+        Car secondcar = new Car();
+        secondcar.setCarCapacity(80);
+        Car thirdcar = new Car();
+        thirdcar.setCarFuel(80);
+
+        //int firstcartranscost = loadinkg / firstcar.getCarCapacity() * literperdistanceone;
+        //System.out.println("First car transportation cost = " + firstcartranscost);
+
+        //int secondcartranscost = loadinkg / secondcar.getCarCapacity() * literperdistancetwo;
+        //System.out.println("Second car transportation cost = " + secondcartranscost);
+
+
+        //int thirdcartranscost = loadinkg / thirdcar.getCarCapacity() * thirdcarliterperdistance;
+        //System.out.println("Third car transportation cost = " + thirdcartranscost);
+    }
 }
-
-
-
