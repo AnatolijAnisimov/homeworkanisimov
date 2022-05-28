@@ -42,12 +42,6 @@ public class WebTesting {
         flights.selectByValue("11");
         WebElement price = browser.findElement(GET_PRICE);
         price.click();
-
-
-
-
-
-
     }
 }
 
