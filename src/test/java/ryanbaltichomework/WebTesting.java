@@ -2,7 +2,6 @@ package ryanbaltichomework;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,8 +36,7 @@ public class WebTesting {
         children.sendKeys("10");
         WebElement luggage = browser.findElement(LUGGAGE);
         luggage.sendKeys("1");
-        WebElement select = browser.findElement(SELECT);
-        Select flights = new Select(browser.findElement(By.id("flight")));
+        Select flights = new Select(browser.findElement(SELECT));
         flights.selectByValue("11");
         WebElement price = browser.findElement(GET_PRICE);
         price.click();
