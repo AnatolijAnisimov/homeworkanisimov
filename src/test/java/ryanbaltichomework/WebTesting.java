@@ -16,7 +16,8 @@ public class WebTesting {
     private final By CHILDREN_COUNT = By.id("children");
     private final By LUGGAGE = By.id("bugs");
     private final By SELECT = By.id("flight");
-    private final By GET_PRICE = By.xpath("//*[@id='fullForm']/span[8]");
+    private final By GET_PRICE = By.xpath(".//span[@style='cursor: pointer;']");
+
     @Test
     public void WebPage() {
         System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
