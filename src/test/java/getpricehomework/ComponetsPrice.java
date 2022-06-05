@@ -52,8 +52,8 @@ public class ComponetsPrice {
                 }
             }
 
-            List<WebElement> subcatItems = browser.findElement(SUBCAT_MENU).findElements(SUBCAT_ITEM);
-            for (WebElement web : subcatItems) {
+            List<WebElement> subCatItems = browser.findElement(SUBCAT_MENU).findElements(SUBCAT_ITEM);
+            for (WebElement web : subCatItems) {
                 if (web.getText().contains(SUBCAT_TO_OPEN)) {
                     web.click();
                     break;
